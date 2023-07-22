@@ -1,0 +1,11 @@
+
+.navbar-underline {
+    border-bottom: 2px solid transparent;
+}
+
+    .navbar-underline:hover {
+        border-bottom: 2px solid white;
+    }
+    .navbar-underline.active {
+        border-bottom: 2px solid white;
+    }

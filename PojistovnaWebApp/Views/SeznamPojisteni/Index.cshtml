@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PojistovnaWebApp.Models.SeznamPojisteni>
+
+@{
+    ViewData["Title"] = "Index";
+}
+                    @if (User.IsInRole("admin"))
+                    {
+<p>
+    <a asp-action="Create">Přidat nové pojištění</a>
+</p>
+                    }      
+@foreach (var item in Model) {
+    <div class="card" style="width: 20rem;">
+                <div class="card-body">
+					<h4 class="card-title">@Html.DisplayFor(modelItem => item.NazevPojisteni)</h4>
+					<p class="card-text">@Html.DisplayFor(modelItem => item.Perex)</p>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Zjistit více</a>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Smazat pojištění</a>
+                    }
+
+            </div>
+    </div>
+}
+

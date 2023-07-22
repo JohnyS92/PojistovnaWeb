@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PojistovnaWebApp.Models.PojisteneOsoby>
+
+@{
+    ViewData["Title"] = "Index";
+}
+        @if (User.IsInRole("admin"))
+    {
+<form asp-action="Create">
+
+    <button type="submit" class="btn btn-primary">Vytvořit novou pojištěnou osobu</button>
+</form>
+    }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Jmeno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prijmeni)
+            </th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jmeno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijmeni)
+            </td>
+                <td class="d-flex justify-content-end">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <form asp-action="Details" asp-route-id="@item.IdOsoby">
+                            <button type="submit" class="btn btn-primary mx-1">Detaily</button>
+                        </form>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <form asp-action="Delete" asp-route-id="@item.IdOsoby">
+                                <button type="submit" class="btn btn-primary">Smazat osobu</button>
+                            </form>
+                        }
+                    </div>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

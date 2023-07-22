@@ -1,0 +1,39 @@
+﻿@model PojistovnaWebApp.Models.SeznamPojisteni
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Smazání</h1>
+
+<h3>Opravdu si přejete smazat toto pojištění</h3>
+<div>
+    <h4>SeznamPojisteni</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NazevPojisteni)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NazevPojisteni)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Perex)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Perex)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Popis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Popis)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">ZPĚT NA SEZNAM POJIŠTĚNÍ</a>
+    </form>
+</div>
