@@ -52,7 +52,7 @@ namespace PojistovnaWebApp.UnitTests.Controllers
             {
                 var validationResult = validationResults.SingleOrDefault(vr => vr.MemberNames.Contains(nameof(PojisteneOsoby.Prijmeni)));
                 Assert.NotNull(validationResult);
-                Assert.Contains("Vyplňte příjmení", validationResult.ErrorMessage);
+                Assert.Contains("Vyplňte přijmení", validationResult.ErrorMessage);
             }
         }
         //Email

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PojistovnaWebApp.Data;
+using PojistovnaWebApp.Data.Migrations;
 using PojistovnaWebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -71,6 +72,7 @@ using (var scope = app.Services.CreateScope())
             Cena = (1000 * i).ToString(), // Pøevedeme int na string
             NazevPojisteni = "Pojisteni" + i,
             Perex = "perex 1" + i,
+            Popis= "popis 1" + i, 
             PojisteniOd = new DateTime(2022, 1, 1).AddMonths(i).ToString(), // Pøevedeme DateTime na string
             PojisteniDo = new DateTime(2022, 6, 1).AddMonths(i * 3).ToString(), // Pøevedeme DateTime na string
         };

@@ -86,7 +86,7 @@ namespace PojistovnaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NazevPojisteni,Perex,Popis")] SeznamPojisteni seznamPojisteni)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NazevPojisteni,Perex,Popis, PojisteniOd, PojisteniDo, Cena")] SeznamPojisteni seznamPojisteni)
         {
             if (id != seznamPojisteni.Id)
             {
