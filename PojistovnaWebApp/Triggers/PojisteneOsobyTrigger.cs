@@ -9,24 +9,6 @@ using Microsoft.EntityFrameworkCore;
  */
 namespace PojistovnaWebApp.Triggers
 {
-    public class PojisteneOsobyTrigger : IBeforeSaveTrigger<PojistnaUdalost>
-    {
-        private readonly ApplicationDbContext db;
 
-        public async Task BeforeSave(ITriggerContext<PojistnaUdalost> context, CancellationToken cancellationToken)
-        {
-            if (context.ChangeType == ChangeType.Added || context.ChangeType == ChangeType.Modified)
-            {
-                PojistnaUdalost PojistnaUdalost = context.Entity;
-
-                SjednanaPojisteni SjednanaPojisteni = await db.SjednanaPojisteni.FirstOrDefaultAsync(i => i.Id == PojistnaUdalost.SjednanaPojisteniId);
-
-                if (PojistnaUdalost.Plneni! > SjednanaPojisteni.PojistnaCastka)
-                {
-                    await db.SaveChangesAsync();
-                }
-            }
-        }
-    }
 }
 

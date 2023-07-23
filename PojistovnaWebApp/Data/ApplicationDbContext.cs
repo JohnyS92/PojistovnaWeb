@@ -8,7 +8,6 @@ namespace PojistovnaWebApp.Data
     {                
         public DbSet<PojisteneOsoby> PojisteneOsoby { get; set; }
         public DbSet<SeznamPojisteni> SeznamPojisteni { get; set; }
-        public DbSet<SjednanaPojisteni> SjednanaPojisteni { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

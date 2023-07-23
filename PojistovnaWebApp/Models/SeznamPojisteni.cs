@@ -14,5 +14,12 @@ namespace PojistovnaWebApp.Models
         public string Perex { get; set; } = "";
         [Required(ErrorMessage = "Vyplňte popis pojištění")]
         public string Popis { get; set; } = "";
+        [Required(ErrorMessage = "Vyplňte cenu pojištění")]
+        public string Cena { get; set; } = "";
+        [Required(ErrorMessage = "Vyplňte datum začátku pojištění")]
+        public string PojisteniOd { get; set; } = "";
+        [Required(ErrorMessage = "Vyplňte datum konce pojištění")]
+        public string PojisteniDo { get; set; } = "";
+
     }
 }

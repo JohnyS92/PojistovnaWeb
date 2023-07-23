@@ -27,9 +27,6 @@ namespace PojistovnaWebApp.Models
         [Display(Name = "Číslo pojistné smlouvy")]
         public int SjednanaPojisteniId { get; set; }
 
-        // Přístup ke kolekci SjednanaPojisteni
-        public virtual SjednanaPojisteni? SjednanaPojisteni { get; set; }
-
         // Přístup ke kolekci PojisteneOsoby
         public virtual PojisteneOsoby? PojisteneOsoby { get; set; }
     }
